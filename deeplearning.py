@@ -19,7 +19,6 @@ datay = eye_data['value'].values
 
 #keras로 딥러닝 학습모델 제작
 #hidden layer는 총 5개로 각각 64, 64, 128, 128, 64개의 노드를 가짐
-
 #활성화 함수로 사용된 relu 함수는 음수는 0으로 양수는 그대로 반환하는 함수이다.
 #1. 간단한 형태이기에 계산이 빠르다
 #2. 입력값이 매우 크거나 작아 기울기가 0에 가까워지는 그래디언트 소실 문제가 없다
@@ -41,6 +40,5 @@ model = keras.models.Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'] )
 #모델에 입력값과 정답을 입력하고 1000번 반복하여 최적화를 수행한다.
 model.fit(numpy.array(datax), numpy.array(datay), epochs=1000)
-
 #모델을 keras 파일 형태로 저장한다
 model.save('predict_model.keras')
